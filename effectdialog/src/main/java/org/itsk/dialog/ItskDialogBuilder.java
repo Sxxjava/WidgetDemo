@@ -83,12 +83,23 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
 
     private static ItskDialogBuilder instance;
 
-
+    /**
+     * 构造函数
+     * @param context
+     *          上下文对象
+     * */
     public ItskDialogBuilder(Context context) {
         super(context);
         init(context);
 
     }
+    /**
+     * 构造函数
+     * @param context
+     *          上下文对象
+     * @param theme
+     *          style资源id
+     * */
     public ItskDialogBuilder(Context context, int theme) {
         super(context, theme);
         init(context);
@@ -107,7 +118,14 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
         window.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
     }
-    
+
+    /**
+     * 获取实例对象
+     * @param context
+     *           上下文对象
+     * @return ItskDialogBuilder
+     *           自身builder对象
+     * */
     public static ItskDialogBuilder getInstance(Context context) {
 
         if (instance == null || !tmpContext.equals(context)) {
@@ -121,22 +139,13 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
         return instance;
     }
     /**
-     * @param context 上下文
-     * @param theme 参考:
-                      <style name="dialog_tran" parent="android:style/Theme.Dialog">
-                        <item name="android:windowFrame">@null</item>
-                        <item name="android:windowNoTitle">true</item>
-                        <item name="android:windowBackground">@android:color/transparent</item>
-                        <item name="android:windowIsFloating">true</item>
-                        <item name="android:windowContentOverlay">@null</item>
-                        <item name="android:windowIsTranslucent">true</item>
-                        <item name="android:backgroundDimEnabled">false</item>
-                        <item name="android:backgroundDimAmount">0.4</item>
-                    </style>
-                    <style name="dialog_untran" parent="dialog_tran">
-                            <item name="android:backgroundDimEnabled">true</item>
-                    </style>
-     *
+     * 获取实例对象
+     * @param context
+     *          上下文对象
+     * @param theme
+     *          要使用的风格配置
+     * @return ItskDialogBuilder
+     *          自身builder对象
      * */
     public static ItskDialogBuilder getInstance(Context context,int theme) {
 
@@ -150,7 +159,7 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
         tmpContext = context;
         return instance;
     }
-    
+
     private void init(Context context) {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         //mDialogView = View.inflate(context, R.layout.dialog_layout, null);
@@ -387,127 +396,276 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
             }
         });
     }
-    
+    /**
+     * 使用默认属性
+     * */
     public void toDefault(){
         mTitle.setTextColor(Color.parseColor(defTextColor));
         mDivider.setBackgroundColor(Color.parseColor(defDividerColor));
         mMessage.setTextColor(Color.parseColor(defMsgColor));
         mLinearLayoutView.setBackgroundColor(Color.parseColor(defDialogColor));
     }
-    
+    /**
+     * 设置标题栏和内容区的分割线颜色
+     * @param colorString
+     *          颜色字符串,例如"#ff255458"
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withDividerColor(String colorString) {
         mDivider.setBackgroundColor(Color.parseColor(colorString));
         return this;
     }
+    /**
+     * 设置标题栏和内容区的分割线颜色
+     * @param color
+     *          颜色值
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withDividerColor(int color) {
         mDivider.setBackgroundColor(color);
         return this;
     }
-    
-    
+    /**
+     * 设置对话框的标题
+     * @param title
+     *          对话框标题
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withTitle(CharSequence title) {
         toggleView(mLinearLayoutTopView,title);
         mTitle.setText(title);
         return this;
     }
-    
+    /**
+     * 设置对话框的标题颜色
+     * @param colorString
+     *          对话框标题的文本颜色字符串,例如"#ff255458"
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withTitleColor(String colorString) {
         mTitle.setTextColor(Color.parseColor(colorString));
         return this;
     }
-    
+    /**
+     * 设置对话框的标题颜色
+     * @param color
+     *          对话框标题颜色值
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withTitleColor(int color) {
         mTitle.setTextColor(color);
         return this;
     }
-    
+    /**
+     * 设置对话框的提示信息
+     * @param textResId
+     *          字符串资源id
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withMessage(int textResId) {
         toggleView(mLinearLayoutMsgView,textResId);
         mMessage.setText(textResId);
         return this;
     }
-    
+    /**
+     * 设置对话框的提示信息
+     * @param msg
+     *          提示的字符串内容
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withMessage(CharSequence msg) {
         toggleView(mLinearLayoutMsgView,msg);
         mMessage.setText(msg);
         return this;
     }
+    /**
+     * 设置对话框的提示信息文本颜色
+     * @param colorString
+     *          提示的文本颜色字符串,例如:"#ff225485"
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withMessageColor(String colorString) {
         mMessage.setTextColor(Color.parseColor(colorString));
         return this;
     }
+    /**
+     * 设置对话框的提示信息文本颜色
+     * @param color
+     *          提示的文本颜色值
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withMessageColor(int color) {
         mMessage.setTextColor(color);
         return this;
     }
-    
+
+    /**
+     * 设置对话框的背景颜色
+     * @param colorString
+     *          提示的文本颜色字符串,例如:"#ff225485"
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withDialogColor(String colorString) {
         mLinearLayoutView.getBackground().setColorFilter(ColorUtils.getColorFilter(Color.parseColor(colorString)));
         return this;
     }
-    
+    /**
+     * 设置对话框的背景颜色
+     * @param color
+     *          提示的文本颜色值
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withDialogColor(int color) {
         mLinearLayoutView.getBackground().setColorFilter(ColorUtils.getColorFilter(color));
         return this;
     }
-    
+    /**
+     * 设置对话框的图标
+     * @param drawableResId
+     *          drawable资源id
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withIcon(int drawableResId) {
         mIcon.setImageResource(drawableResId);
         return this;
     }
-    
+    /**
+     * 设置对话框的图标
+     * @param icon
+     *          drawable对象
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withIcon(Drawable icon) {
         mIcon.setImageDrawable(icon);
         return this;
     }
-    
+    /**
+     * 设置对话框动画事件
+     * @param duration
+     *          动画时长
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withDuration(int duration) {
         this.mDuration=duration;
         return this;
     }
-    
+    /**
+     * 设置对话框动画效果
+     * @param type
+     *          效果对象
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withEffect(Effectstype type) {
         this.type=type;
         return this;
     }
-    
+    /**
+     * 设置对话框按钮的背景
+     * @param resid
+     *          资源id
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withButtonDrawable(int resid) {
         mPositiveButton.setBackgroundResource(resid);
         mNeutralButton.setBackgroundResource(resid);
         mNegativeButton.setBackgroundResource(resid);
         return this;
     }
+    /**
+     * 设置对话框左边按钮的文本内容
+     * @param text
+     *          字符串
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withPositiveButtonText(CharSequence text) {
         mPositiveButton.setVisibility(View.VISIBLE);
         mPositiveButton.setText(text);
         return this;
     }
+    /**
+     * 设置对话框中间按钮的文本内容
+     * @param text
+     *          字符串
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withNeutralButtonText(CharSequence text) {
         mNeutralButton.setVisibility(View.VISIBLE);
         mNeutralButton.setText(text);
         return this;
     }
+    /**
+     * 设置对话框右侧按钮的文本内容
+     * @param text
+     *          字符串
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder withNegativeButtonText(CharSequence text) {
         mNegativeButton.setVisibility(View.VISIBLE);
         mNegativeButton.setText(text);
         return this;
     }
+    /**
+     * 设置对话框左侧按钮的点击事件
+     * @param click
+     *          点击事件对象
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder setPositiveClick(View.OnClickListener click) {
         mPositiveButton.setOnClickListener(click);
         return this;
     }
-
+    /**
+     * 设置对话框中间按钮的点击事件
+     * @param click
+     *          点击事件对象
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder setNeutralClick(View.OnClickListener click) {
         mNeutralButton.setOnClickListener(click);
         return this;
     }
-    
+    /**
+     * 设置对话框右侧按钮的点击事件
+     * @param click
+     *          点击事件对象
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder setNegativeClick(View.OnClickListener click) {
         mNegativeButton.setOnClickListener(click);
         return this;
     }
-    
-    
+
+    /**
+     * 设置对话框自定义内容
+     * @param resId
+     *          布局资源ID
+     * @param context
+     *          上下文对象
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder setCustomView(int resId, Context context) {
         View customView = View.inflate(context, resId, null);
         if (mFrameLayoutCustomView.getChildCount()>0){
@@ -516,7 +674,15 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
         mFrameLayoutCustomView.addView(customView);
         return this;
     }
-    
+    /**
+     * 设置对话框自定义内容
+     * @param view
+     *          View对象
+     * @param context
+     *          上下文对象
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder setCustomView(View view, Context context) {
         if (mFrameLayoutCustomView.getChildCount()>0){
             mFrameLayoutCustomView.removeAllViews();
@@ -525,12 +691,25 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
         
         return this;
     }
+    /**
+     * 设置在对话框外边点击可否消失
+     * @param cancelable
+     *          是否消失
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder isCancelableOnTouchOutside(boolean cancelable) {
         this.isCancelable=cancelable;
         this.setCanceledOnTouchOutside(cancelable);
         return this;
     }
-    
+    /**
+     * 设置在对话框外边可否取消
+     * @param cancelable
+     *          是否可以取消
+     * @return ItskDialogBuilder
+     *          自身builder对象
+     * */
     public ItskDialogBuilder isCancelable(boolean cancelable) {
         this.isCancelable=cancelable;
         this.setCancelable(cancelable);
@@ -544,6 +723,7 @@ public class ItskDialogBuilder extends Dialog implements DialogInterface {
             view.setVisibility(View.VISIBLE);
         }
     }
+
     @Override
     public void show() {
         super.show();

@@ -1,1 +1,1 @@
-include ':app', ':effectdialog'
+include ':app', ':effectdialog', ':bottomtab'

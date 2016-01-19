@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="对话框效果演示"
+        android:textSize="20sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/fadein"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FadeIn效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/fall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fall效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/flipH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FlipH效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/flipV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FlipV效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/newsPaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NewsPaper效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/rotateBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RotateBottom效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/rotateLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RotateLeft效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/shake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shake效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/slideFall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SlideFall效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/slideBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SlideBottom效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/slideLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SlideLeft效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/slideRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SlideRight效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/slideTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SlideTop效果"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/slit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Slit效果"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
