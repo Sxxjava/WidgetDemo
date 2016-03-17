@@ -147,7 +147,10 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
         }
         mButtons.get(defItem).setChecked(true);
     }
-    /**设置默认的选中项*/
+    /**
+     * 设置默认的选中项
+     * @param defItem 默认选中项
+     * */
     public void setDefItem(int defItem) {
         this.defItem = defItem;
         currentItem=defItem;
@@ -163,12 +166,18 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
             }
         }
     }
-    /**设置分割线的高度*/
+    /**
+     * 设置分割线的高度
+     * @param dividerHeight 分割线高度
+     * */
     public void setDividerHeight(int dividerHeight) {
         this.dividerHeight = dividerHeight;
         dividerView.getLayoutParams().height=dividerHeight;
     }
-    /**设置分割线的颜色*/
+    /**
+     * 设置分割线的颜色
+     * @param divideColor 分割线颜色
+     * */
     public void setDivideColor(int divideColor) {
         this.divideColor = divideColor;
         dividerView.setBackgroundColor(divideColor);
@@ -180,7 +189,10 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
             dividerView.setVisibility(View.VISIBLE);
         }
     }
-    /**设置是否显示分割线*/
+    /**
+     * 设置是否显示分割线
+     * @param  isDrawDivider 是否画分割线
+     * */
     public void setIsDrawDivider(boolean isDrawDivider) {
         this.isDrawDivider = isDrawDivider;
         if (!isDrawDivider)
@@ -188,7 +200,10 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
         else
             dividerView.setVisibility(View.VISIBLE);
     }
-    /**设置按钮的字体大小,单位是SP*/
+    /**
+     * 设置按钮的字体大小,单位是SP
+     * @param textSize 文字大小
+     * */
     public void setTextSize(float textSize){
         for (ButtonView buttonView:mButtons)
             buttonView.setTextSize(textSize);
@@ -206,7 +221,10 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
             }
         }
     }
-    /**设置选中项被改变的事件*/
+    /**
+     * 设置选中项被改变的事件
+     * @param checkedChangeListener 选中项被改变的监听器
+     * */
     public void setOnCheckedChangeListener(OnCheckedChangeListener checkedChangeListener) {
         this.checkedChangeListener = checkedChangeListener;
         checkedChangeListener.OnCheckedChanged(mButtons.get(currentItem),currentItem);

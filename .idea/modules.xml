@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bottomtab/bottomtab.iml" filepath="$PROJECT_DIR$/bottomtab/bottomtab.iml" />
       <module fileurl="file://$PROJECT_DIR$/effectdialog/effectdialog.iml" filepath="$PROJECT_DIR$/effectdialog/effectdialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xtoast/xtoast.iml" filepath="$PROJECT_DIR$/xtoast/xtoast.iml" />
     </modules>
   </component>
 </project>
