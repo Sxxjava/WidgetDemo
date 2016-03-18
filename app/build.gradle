@@ -25,5 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'org.itsk.widget:bottomtab:0.1'
     compile 'org.itsk.widget:effectdialog:0.1'
-    compile project(':xtoast')
+    compile 'org.itsk.widget:xtoast:0.1'
 }
