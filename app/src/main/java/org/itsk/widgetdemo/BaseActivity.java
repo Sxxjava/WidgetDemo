@@ -6,17 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.TextView;
 
 import org.itsk.xtoast.XToast;
 
-import io.cloud.treatme.R;
-
 public abstract class BaseActivity extends AppCompatActivity {
-
-    protected TextView app_title_left;
-    protected TextView app_title_title;
-    protected TextView app_title_right;
 
 
     @Override
