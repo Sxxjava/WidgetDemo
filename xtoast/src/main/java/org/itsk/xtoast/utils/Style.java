@@ -3,11 +3,12 @@ package org.itsk.xtoast.utils;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
-import org.itsk.xtoast.R;
+
 import org.itsk.xtoast.XToast;
 
 /** Creates a reference to basic style options so that all types of SuperToasts
  *  will be themed the same way in a particular class. */
+
 @SuppressWarnings("UnusedDeclaration")
 public class Style {
 
@@ -201,39 +202,39 @@ public class Style {
 
                 case BLACK:
 
-                    return (R.drawable.background_kitkat_black);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_black);
 
                 case WHITE:
 
-                    return (R.drawable.background_kitkat_white);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_white);
 
                 case GRAY:
 
-                    return (R.drawable.background_kitkat_gray);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_gray);
 
                 case PURPLE:
 
-                    return (R.drawable.background_kitkat_purple);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_purple);
 
                 case RED:
 
-                    return (R.drawable.background_kitkat_red);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_red);
 
                 case ORANGE:
 
-                    return (R.drawable.background_kitkat_orange);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_orange);
 
                 case BLUE:
 
-                    return (R.drawable.background_kitkat_blue);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_blue);
 
                 case GREEN:
 
-                    return (R.drawable.background_kitkat_green);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_green);
 
                 default:
 
-                    return (R.drawable.background_kitkat_gray);
+//                    return (org.itsk.xtoast.R.drawable.background_kitkat_gray);
 
             }
 
@@ -243,44 +244,44 @@ public class Style {
 
                 case BLACK:
 
-                    return (R.drawable.background_standard_black);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_black);
 
                 case WHITE:
 
-                    return (R.drawable.background_standard_white);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_white);
 
                 case GRAY:
 
-                    return (R.drawable.background_standard_gray);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_gray);
 
                 case PURPLE:
 
-                    return (R.drawable.background_standard_purple);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_purple);
 
                 case RED:
 
-                    return (R.drawable.background_standard_red);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_red);
 
                 case ORANGE:
 
-                    return (R.drawable.background_standard_orange);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_orange);
 
                 case BLUE:
 
-                    return (R.drawable.background_standard_blue);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_blue);
 
                 case GREEN:
 
-                    return (R.drawable.background_standard_green);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_green);
 
                 default:
 
-                    return (R.drawable.background_standard_gray);
+//                    return (org.itsk.xtoast.R.drawable.background_standard_gray);
 
             }
 
         }
-
+        return 0;
     }
 
 }

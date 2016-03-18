@@ -4,11 +4,11 @@ apply plugin: 'com.jfrog.bintray'
 // load properties
 Properties properties = new Properties()
 File localPropertiesFile = project.file("local.properties");
-if(localPropertiesFile.exists()){
+if (localPropertiesFile.exists()) {
     properties.load(localPropertiesFile.newDataInputStream())
 }
 File projectPropertiesFile = project.file("project.properties");
-if(projectPropertiesFile.exists()){
+if (projectPropertiesFile.exists()) {
     properties.load(projectPropertiesFile.newDataInputStream())
 }
 
@@ -74,15 +74,16 @@ task sourcesJar(type: Jar) {
 
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
+    exclude('org.itsk.xtoast.utils.Style.class')
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+
 }
 
-// This generates javadoc.jar
+//This generates javadoc.jar
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
-
 artifacts {
     archives javadocJar
     archives sourcesJar
@@ -90,7 +91,7 @@ artifacts {
 
 // javadoc configuration
 javadoc {
-    options{
+    options {
         encoding "UTF-8"
         charSet 'UTF-8'
         author true

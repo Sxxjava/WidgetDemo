@@ -18,7 +18,7 @@ public class ColorUtils {
                 , 0, 0, 0, 1, 0 };
 
         colorFilter = new ColorMatrixColorFilter(matrix);
-
+        System.out.println(R.string.app_name);
         return colorFilter;
     }
 }

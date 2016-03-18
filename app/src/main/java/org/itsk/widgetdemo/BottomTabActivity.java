@@ -39,5 +39,6 @@ public class BottomTabActivity extends AppCompatActivity {
 
     private void selectPage(int index) {
         textView.setText("当前是第"+(index+1)+"个页面");
+
     }
 }
