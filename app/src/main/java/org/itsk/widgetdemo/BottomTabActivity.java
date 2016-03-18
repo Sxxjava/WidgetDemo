@@ -2,14 +2,13 @@ package org.itsk.widgetdemo;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import org.itsk.bottomtab.BottomTab;
 
 import java.util.LinkedHashMap;
 
-public class BottomTabActivity extends AppCompatActivity {
+public class BottomTabActivity extends BaseActivity {
 
     private BottomTab nav;
     private TextView textView;
@@ -39,6 +38,6 @@ public class BottomTabActivity extends AppCompatActivity {
 
     private void selectPage(int index) {
         textView.setText("当前是第"+(index+1)+"个页面");
-
+        showToast("第"+(index+1)+"个页面");
     }
 }

@@ -1,14 +1,13 @@
 package org.itsk.widgetdemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
 import org.itsk.dialog.Effectstype;
 import org.itsk.dialog.ItskDialogBuilder;
 
-public class DialogActivity extends AppCompatActivity {
+public class DialogActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +17,7 @@ public class DialogActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
+        showToast("对话框效果预览");
         switch (view.getId()){
             case R.id.fadein:
                 showDialog(Effectstype.Fadein);
