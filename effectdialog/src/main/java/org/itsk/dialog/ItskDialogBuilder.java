@@ -29,7 +29,7 @@ import org.itsk.dialog.effects.BaseEffects;
 
 /*
  * Copyright 2015 Jour
- * https://github.com/sd6352051/NiftyDialogEffects
+ * Update with https://github.com/sd6352051/NiftyDialogEffects
  */
 public class ItskDialogBuilder extends Dialog implements DialogInterface {
     /**默认字体颜色*/

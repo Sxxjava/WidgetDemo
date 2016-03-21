@@ -23,7 +23,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'org.itsk.widget:bottomtab:0.1'
-    compile 'org.itsk.widget:effectdialog:0.1'
-    compile 'org.itsk.widget:xtoast:0.1'
+    compile 'org.itsk.widget:bottomtab:0.2'
+    compile 'org.itsk.widget:effectdialog:0.2'
+    compile 'org.itsk.widget:xtoast:0.2'
 }

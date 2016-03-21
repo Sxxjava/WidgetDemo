@@ -29,7 +29,6 @@ def bintrayUser = properties.getProperty("bintray.user")
 def bintrayApikey = properties.getProperty("bintray.apikey")
 
 def javadocName = properties.getProperty("javadoc.name")
-
 group = projectGroupId
 
 // This generates POM.xml with proper parameters
@@ -65,7 +64,23 @@ install {
         }
     }
 }
-
+android.libraryVariants.all { variant ->
+    task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
+        description "Generates Javadoc for $variant.name."
+        source = 'src/main/java'
+        ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+        classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+        options.links("http://docs.oracle.com/javase/7/docs/api/");
+        options.linksOffline("http://d.android.com/reference/","${android.sdkDirectory}/docs/reference");
+        options.encoding='utf-8'
+        // exclude generated files
+        exclude '**/BuildConfig.java'
+        exclude '**/R.java'
+        exclude '**/utils/**'
+        // exclude any internal packages
+        exclude '**/com/acme/sdk/api/**'
+    }
+}
 // This generates sources.jar
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -73,16 +88,31 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    exclude('org.itsk.xtoast.utils.Style.class')
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//    exclude '**/Style.java'
+    source = 'src/main/java'
+    ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-
+    classpath += files(ext.androidJar)
+    options.links("http://docs.oracle.com/javase/7/docs/api/");
+    options.linksOffline("http://d.android.com/reference/","${android.sdkDirectory}/docs/reference");
+    options.encoding='utf-8'
+    // exclude generated files
+    exclude '**/BuildConfig.java'
+    exclude '**/R.java'
+    exclude '**/utils/**'
+//    exclude '**/utils/Style.java'
+//    exclude '**/utils/OnDismissWrapper.java'
+//    exclude '**/utils/OnClickWrapper.java'
+    exclude '**/**Toast.java'
 }
 
 //This generates javadoc.jar
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
+
 }
 artifacts {
     archives javadocJar

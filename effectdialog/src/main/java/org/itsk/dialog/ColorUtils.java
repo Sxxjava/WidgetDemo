@@ -2,8 +2,6 @@ package org.itsk.dialog;
 
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
-
-// http://stackoverflow.com/a/11171509/317862
 public class ColorUtils {
 
     public static ColorFilter getColorFilter(int color) {
