@@ -22,6 +22,10 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this,BottomTabActivity.class));
                 showToast("底部Tab演示");
                 break;
+            case R.id.sweetDemo:
+                startActivity(new Intent(this,SweetAlertActivity.class));
+                showToast("SweetAlert对话框效果预览");
+                break;
         }
     }
 }
