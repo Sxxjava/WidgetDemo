@@ -2,7 +2,22 @@
 一些自定义组件的演示项目
 
 #ItskDialog对话框使用
-1. 代码
+1. 下载
+        maven:
+
+        <dependency>
+          <groupId>org.itsk.widget</groupId>
+          <artifactId>effectdialog</artifactId>
+          <version>0.2</version>
+          <type>pom</type>
+        </dependency>
+
+        Gradle:
+
+        compile 'org.itsk.widget:effectdialog:0.2'
+
+
+2. 代码
 		
 		final ItskDialogBuilder builder=ItskDialogBuilder.getInstance(this);
         builder.withTitle("Itsk Dialog")    					//设置对话框标题,如果不需要可以使用.withTitle(null)
@@ -40,12 +55,26 @@
                 })
                 .isCancelable(true).isCancelableOnTouchOutside(true).show();
 
-2. 效果图
+3. 效果图
 	
 	具体的请允许演示项目查看
 	
 #BottomTab使用
-1. layout布局文件
+1. 下载
+        maven:
+
+        <dependency>
+          <groupId>org.itsk.widget</groupId>
+          <artifactId>bottomtab</artifactId>
+          <version>0.2</version>
+          <type>pom</type>
+        </dependency>
+
+        Gradle:
+
+        compile 'org.itsk.widget:bottomtab:0.2'
+
+2. layout布局文件
 
 		<?xml version="1.0" encoding="utf-8"?>
 		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -81,7 +110,7 @@
 		
 		</RelativeLayout>
 
-2. Activity中的代码
+3. Activity中的代码
 
 		
 		textView= (TextView) findViewById(R.id.text2);
@@ -108,14 +137,28 @@
 		     }
 		});
 
-3. 效果图
+4. 效果图
 
 	![](http://i.imgur.com/nqVNUlz.png)
 
 
 #XToast使用
+1. 下载
+        maven:
 
-1. Activity代码
+        <dependency>
+          <groupId>org.itsk.widget</groupId>
+          <artifactId>xtoast</artifactId>
+          <version>0.2</version>
+          <type>pom</type>
+        </dependency>
+
+        Gradle:
+
+        compile 'org.itsk.widget:xtoast:0.2'
+
+
+2. Activity代码
 
         /**
          * 弹出Toast
@@ -330,5 +373,5 @@
                     showToast(text, XToast.Animations.FLYIN, XToast.Duration.VERY_SHORT,3,15,false,null, XToast.IconPosition.LEFT);
                 }
 
-2. 效果图
+3. 效果图
     效果图请看演示项目
