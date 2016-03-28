@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/effectdialog/effectdialog.iml" filepath="$PROJECT_DIR$/effectdialog/effectdialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/sweetalert/sweetalert.iml" filepath="$PROJECT_DIR$/sweetalert/sweetalert.iml" />
       <module fileurl="file://$PROJECT_DIR$/sweetalert/sweetalert.iml" filepath="$PROJECT_DIR$/sweetalert/sweetalert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/togglebutton/togglebutton.iml" filepath="$PROJECT_DIR$/togglebutton/togglebutton.iml" />
       <module fileurl="file://$PROJECT_DIR$/xtoast/xtoast.iml" filepath="$PROJECT_DIR$/xtoast/xtoast.iml" />
       <module fileurl="file://$PROJECT_DIR$/xtoast/xtoast.iml" filepath="$PROJECT_DIR$/xtoast/xtoast.iml" />
     </modules>
