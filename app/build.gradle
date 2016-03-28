@@ -37,5 +37,5 @@ dependencies {
     compile 'org.itsk.widget:bottomtab:0.2'
     compile 'org.itsk.widget:effectdialog:0.2'
     compile 'org.itsk.widget:xtoast:0.2'
-    compile project(':sweetalert')
+    compile 'org.itsk.widget:sweetalert:0.1'
 }

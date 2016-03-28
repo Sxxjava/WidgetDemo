@@ -5,7 +5,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import org.itsk.sweetalert.SweetAlertDialog;
+import org.itsk.widget.sweetalert.SweetAlertDialog;
 
 public class SweetAlertActivity extends AppCompatActivity implements View.OnClickListener {
     private int i = -1;
