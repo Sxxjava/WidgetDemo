@@ -1,1 +1,1 @@
-include ':app', ':effectdialog', ':bottomtab', ':xtoast', ':sweetalert'
+include ':app', ':effectdialog', ':bottomtab', ':xtoast', ':sweetalert', ':togglebutton'
