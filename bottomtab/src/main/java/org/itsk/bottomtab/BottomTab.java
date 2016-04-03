@@ -133,6 +133,48 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
      *          按钮文本
      * @param  colors
      *          按钮文本颜色
+     * @param  imageRes
+     *          图片资源数组
+     */
+    public void setButtons(String[] text,int[] colors,int[][] imageRes) {
+        for (int i=0;i<text.length;i++){
+            Drawable[] drawable = new Drawable[2];
+            drawable[0] = mContext.getResources().getDrawable(imageRes[i][0]);
+            drawable[1] = mContext.getResources().getDrawable(imageRes[i][1]);
+            ButtonView buttonView = new ButtonView(text[i], colors, drawable);
+            mButtons.add(buttonView);
+            buttonLayout.addView(buttonView.getButtonView(),new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f));
+        }
+        mButtons.get(defItem).setChecked(true);
+    }
+
+    /**
+     * 设置按钮
+     * @param  text
+     *          按钮文本
+     * @param  colors
+     *          按钮文本颜色
+     * @param  imageRes
+     *          图片资源数组
+     */
+    public void setButtons(String[] text,int[] colors,int[] imageRes) {
+        for (int i=0;i<text.length;i++){
+            Drawable[] drawable = new Drawable[2];
+            drawable[0] = mContext.getResources().getDrawable(imageRes[0]);
+            drawable[1] = mContext.getResources().getDrawable(imageRes[1]);
+            ButtonView buttonView = new ButtonView(text[i], colors, drawable);
+            mButtons.add(buttonView);
+            buttonLayout.addView(buttonView.getButtonView(),new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f));
+        }
+        mButtons.get(defItem).setChecked(true);
+    }
+
+    /**
+     * 设置按钮
+     * @param  text
+     *          按钮文本
+     * @param  colors
+     *          按钮文本颜色
      * @param  bitMaps
      *          图片资源数组
      */
@@ -215,7 +257,8 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
                 //已经选中
                 currentItem=mButtons.indexOf(buttonView);
                 buttonView.setChecked(true);
-                checkedChangeListener.OnCheckedChanged(buttonView,currentItem);
+                if (checkedChangeListener!=null)
+                    checkedChangeListener.OnCheckedChanged(buttonView,currentItem);
             }else{
                 buttonView.setChecked(false);
             }
