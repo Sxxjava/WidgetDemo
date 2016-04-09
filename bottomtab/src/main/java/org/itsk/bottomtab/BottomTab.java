@@ -78,6 +78,7 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
         dividerView = new View(context);
         dividerView.setBackgroundColor(Color.parseColor(defDividerColor));
         LayoutParams dividerParams = new LayoutParams(LayoutParams.MATCH_PARENT, dividerHeight);
+        dividerParams.bottomMargin = 3;
         addView(dividerView, dividerParams);
         //创建存放Button的布局
         buttonLayout = new LinearLayout(context);
@@ -189,6 +190,13 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
         }
         mButtons.get(defItem).setChecked(true);
     }
+
+    public void setDividerPadding(int padding){
+        LinearLayout.LayoutParams dividerParams = (LinearLayout.LayoutParams)dividerView.getLayoutParams();
+        dividerParams.bottomMargin = padding;
+        dividerView.setLayoutParams(dividerParams);
+    }
+
     /**
      * 设置默认的选中项
      * @param defItem 默认选中项
@@ -202,6 +210,23 @@ public class BottomTab extends LinearLayout implements View.OnClickListener {
                     buttonView.setChecked(true);
                     if (checkedChangeListener!=null)
                         checkedChangeListener.OnCheckedChanged(buttonView,defItem);
+                }else{
+                    buttonView.setChecked(false);
+                }
+            }
+        }
+    }
+
+    /**
+     * 设置默认的选中项
+     * @param  index 默认选中项
+     * */
+    public void setCurrentItem(int index) {
+        currentItem=defItem;
+        if (mButtons!=null && mButtons.size()>index){
+            for (ButtonView buttonView:mButtons){
+                if (mButtons.indexOf(buttonView)==index){
+                    buttonView.setChecked(true);
                 }else{
                     buttonView.setChecked(false);
                 }

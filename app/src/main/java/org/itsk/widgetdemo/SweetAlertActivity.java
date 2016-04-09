@@ -23,6 +23,7 @@ public class SweetAlertActivity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.warning_cancel_test).setOnClickListener(this);
         findViewById(R.id.custom_img_test).setOnClickListener(this);
         findViewById(R.id.progress_dialog).setOnClickListener(this);
+        findViewById(R.id.custom_view_test).setOnClickListener(this);
 
     }
 
@@ -161,6 +162,38 @@ public class SweetAlertActivity extends AppCompatActivity implements View.OnClic
                                 .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                     }
                 }.start();
+                break;
+            case R.id.custom_view_test:
+                new SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE)
+                        .setTitleText("验证密码")
+                        .setCancelText("取消")
+                        .setConfirmText("确定")
+                        .setCustomView(R.layout.view_customview)
+                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.setTitleText("取消验证!")
+                                        .setContentText("程序将退出,您可再次打开尝试:)")
+                                        .setConfirmText("OK")
+                                        .showCancelButton(false)
+                                        .setCancelClickListener(null)
+                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            @Override
+                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                sweetAlertDialog.dismissWithAnimation();
+                                                SweetAlertActivity.this.finish();
+                                            }
+                                        })
+                                        .changeAlertType(SweetAlertDialog.ERROR_TYPE);
+                            }
+                        })
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                            }
+                        })
+                        .show();
                 break;
         }
 
