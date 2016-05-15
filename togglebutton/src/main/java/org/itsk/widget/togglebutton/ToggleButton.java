@@ -161,7 +161,7 @@ public class ToggleButton extends View{
 	}
 	
 	/**
-	 * @param animate
+	 * @param animate animate
 	 */
 	public void setToggleOn(boolean animate){
 		toggleOn = true;
@@ -312,7 +312,8 @@ public class ToggleButton extends View{
 	 */
 	public interface OnToggleChanged{
 		/**
-		 * @param on
+		 * @param view view
+		 * @param on on
 		 */
 		public void onToggle(View view, boolean on);
 	}
